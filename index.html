@@ -166,6 +166,11 @@
         .delay-2 { animation-delay: 0.2s; }
         .delay-3 { animation-delay: 0.3s; }
         .delay-4 { animation-delay: 0.4s; }
+
+        /* Accessibility: respect reduced motion preference */
+        @media (prefers-reduced-motion: reduce) {
+            .animate { animation: none; opacity: 1; transform: none; }
+        }
     </style>
 </head>
 <body>
@@ -256,7 +261,7 @@
     <section class="cta container animate delay-4">
         <h2 style="font-size:1.8rem; font-weight:700; margin-bottom:16px;">¿Necesitas una auditoría real?</h2>
         <p style="color:var(--text-secondary); margin-bottom:24px;">Este es un POC demo. Solicita una auditoría completa de tu sistema de IA.</p>
-        <a href="https://sabatech.dev/contact">Solicitar Auditoría →</a>
+        <a href="https://sabatech.dev/contact" rel="noopener noreferrer" aria-label="Solicitar auditoría de seguridad en SabaTech">Solicitar Auditoría →</a>
         <p>Desde €499/mes · Resultados en 48h · Compliance garantizado</p>
     </section>
 
